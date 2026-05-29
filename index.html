@@ -3,81 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>AYMP COSMIC ECOSYSTEM</title>
+
 <link rel="icon" type="image/png" href="images/small-logo.png">
 
 <style>
-  /* ========================= */
-/* MOBILE WIDTH FIX */
+
+/* ========================= */
+/* RESET */
 /* ========================= */
 
-body{
-overflow-x:hidden;
-width:100%;
-}
-
-section{
-width:100%;
-max-width:100%;
-overflow:hidden;
-}
-
-.cards{
-width:100%;
-max-width:100%;
-overflow:hidden;
-}
-
-.card{
-min-width:0;
-}
-
-img{
-max-width:100%;
-height:auto;
-display:block;
-}
-
-/* Prevent right-side overflow */
-*{
-max-width:100%;
-}
-
-/* MOBILE FIX */
-@media(max-width:768px){
-
-.hero{
-padding-left:15px;
-padding-right:15px;
-}
-
-.hero h1{
-font-size:32px;
-line-height:1.3;
-}
-
-.section-title{
-font-size:30px;
-text-align:center;
-}
-
-.token-box,
-.brand-card,
-.phase{
-width:100%;
-max-width:100%;
-}
-
-.community-links{
-padding:0 10px;
-}
-
-.brand-buttons a{
-width:100%;
-text-align:center;
-}
-
-}
 *{
 margin:0;
 padding:0;
@@ -85,19 +21,26 @@ box-sizing:border-box;
 font-family:Arial,sans-serif;
 }
 
+html{
+scroll-behavior:smooth;
+overflow-x:hidden;
+}
+
 body{
 background:#000;
 color:white;
 overflow-x:hidden;
+width:100%;
 }
 
-html{
-scroll-behavior:smooth;
-}
+/* ========================= */
+/* HEADER */
+/* ========================= */
 
 header{
 position:fixed;
 top:0;
+left:0;
 width:100%;
 background:rgba(0,0,0,0.85);
 backdrop-filter:blur(10px);
@@ -107,6 +50,7 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 border-bottom:1px solid rgba(255,215,0,0.2);
+flex-wrap:wrap;
 }
 
 .logo{
@@ -120,7 +64,7 @@ nav{
 display:flex;
 gap:12px;
 flex-wrap:wrap;
-justify-content:flex-end;
+justify-content:center;
 }
 
 nav a{
@@ -140,6 +84,10 @@ color:black;
 box-shadow:0 0 15px gold;
 }
 
+/* ========================= */
+/* HERO SECTION */
+/* ========================= */
+
 .hero{
 min-height:100vh;
 display:flex;
@@ -147,10 +95,13 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-padding:120px 20px 60px;
+padding:150px 20px 80px;
 background:
-radial-gradient(circle at center, rgba(0,150,255,0.2), transparent 60%),
+radial-gradient(circle at center,
+rgba(0,150,255,0.2),
+transparent 60%),
 black;
+overflow:hidden;
 }
 
 .hero img{
@@ -162,8 +113,12 @@ animation:spin 18s linear infinite;
 }
 
 @keyframes spin{
-0%{transform:rotate(0deg);}
-100%{transform:rotate(360deg);}
+0%{
+transform:rotate(0deg);
+}
+100%{
+transform:rotate(360deg);
+}
 }
 
 .hero h1{
@@ -171,6 +126,7 @@ font-size:55px;
 color:gold;
 text-shadow:0 0 25px gold;
 margin-bottom:20px;
+line-height:1.2;
 }
 
 .hero p{
@@ -179,7 +135,58 @@ font-size:20px;
 line-height:1.8;
 color:#ddd;
 margin-bottom:30px;
+padding:0 10px;
 }
+
+/* ========================= */
+/* COSMIC BANNER */
+/* ========================= */
+
+.cosmic-banner{
+position:relative;
+width:100%;
+max-width:1000px;
+margin:40px auto;
+border-radius:25px;
+overflow:hidden;
+border:1px solid rgba(255,215,0,0.3);
+box-shadow:0 0 35px rgba(0,255,255,0.2);
+}
+
+.cosmic-banner-img{
+width:100%;
+display:block;
+}
+
+.cosmic-overlay{
+position:absolute;
+bottom:0;
+left:0;
+width:100%;
+padding:30px 20px;
+background:linear-gradient(
+transparent,
+rgba(0,0,0,0.9)
+);
+text-align:center;
+}
+
+.cosmic-overlay h2{
+font-size:36px;
+color:gold;
+text-shadow:0 0 20px gold;
+margin-bottom:10px;
+}
+
+.cosmic-overlay p{
+font-size:18px;
+color:#00ffff;
+margin:0;
+}
+
+/* ========================= */
+/* HERO BUTTONS */
+/* ========================= */
 
 .hero-buttons{
 display:flex;
@@ -209,8 +216,14 @@ color:black;
 box-shadow:0 0 20px #00ffff;
 }
 
+/* ========================= */
+/* GENERAL SECTION */
+/* ========================= */
+
 section{
 padding:90px 20px;
+width:100%;
+overflow:hidden;
 }
 
 .section-title{
@@ -220,6 +233,10 @@ margin-bottom:50px;
 color:gold;
 text-shadow:0 0 20px gold;
 }
+
+/* ========================= */
+/* CARDS */
+/* ========================= */
 
 .cards{
 display:grid;
@@ -254,6 +271,10 @@ line-height:1.8;
 color:#ddd;
 }
 
+/* ========================= */
+/* TOKEN BOX */
+/* ========================= */
+
 .token-box{
 max-width:900px;
 margin:auto;
@@ -277,6 +298,7 @@ padding:15px;
 border-radius:12px;
 margin-top:10px;
 color:gold;
+font-size:14px;
 }
 
 .buy-btn{
@@ -290,6 +312,10 @@ font-weight:bold;
 border-radius:12px;
 box-shadow:0 0 20px gold;
 }
+
+/* ========================= */
+/* ROADMAP */
+/* ========================= */
 
 .roadmap{
 max-width:1000px;
@@ -316,6 +342,10 @@ padding-left:20px;
 line-height:2;
 color:#ddd;
 }
+
+/* ========================= */
+/* COMMUNITY */
+/* ========================= */
 
 .community-links{
 display:flex;
@@ -352,6 +382,94 @@ background:red;
 color:white;
 }
 
+/* ========================= */
+/* BRAND SECTION */
+/* ========================= */
+
+.aymp-brand-section{
+margin-top:50px;
+padding:20px;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.brand-card{
+width:100%;
+max-width:450px;
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,215,0,0.2);
+border-radius:25px;
+padding:30px 20px;
+text-align:center;
+box-shadow:0 0 25px rgba(255,215,0,0.15);
+backdrop-filter:blur(8px);
+}
+
+.brand-logo{
+width:120px;
+height:120px;
+object-fit:cover;
+border-radius:50%;
+margin:0 auto 20px;
+display:block;
+box-shadow:
+0 0 25px gold,
+0 0 40px #00ffff;
+animation:spinBrand 15s linear infinite;
+}
+
+@keyframes spinBrand{
+0%{
+transform:rotate(0deg);
+}
+100%{
+transform:rotate(360deg);
+}
+}
+
+.brand-card h2{
+font-size:28px;
+color:gold;
+margin-bottom:12px;
+text-shadow:0 0 15px gold;
+}
+
+.brand-card p{
+color:#00ffff;
+font-size:16px;
+line-height:1.7;
+margin-bottom:25px;
+}
+
+.brand-buttons{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:15px;
+}
+
+.brand-buttons a{
+padding:14px 20px;
+border-radius:14px;
+text-decoration:none;
+font-weight:bold;
+font-size:14px;
+background:linear-gradient(45deg,gold,orange);
+color:black;
+box-shadow:0 0 15px gold;
+transition:0.3s;
+}
+
+.brand-buttons a:hover{
+transform:scale(1.05);
+box-shadow:0 0 25px gold;
+}
+
+/* ========================= */
+/* FOOTER */
+/* ========================= */
+
 footer{
 text-align:center;
 padding:40px 20px;
@@ -360,32 +478,91 @@ color:#999;
 font-size:14px;
 margin-top:50px;
 border-top:1px solid rgba(255,255,255,0.1);
+line-height:1.8;
 }
 
+/* ========================= */
+/* IMAGE FIX */
+/* ========================= */
+
+img{
+max-width:100%;
+height:auto;
+display:block;
+}
+
+/* ========================= */
+/* MOBILE RESPONSIVE */
+/* ========================= */
+
 @media(max-width:768px){
+
+header{
+flex-direction:column;
+gap:15px;
+padding:15px 10px;
+}
+
+.hero{
+padding-top:190px;
+}
+
 .hero h1{
-font-size:38px;
+font-size:34px;
 }
 
 .hero p{
 font-size:17px;
 }
 
-nav{
-justify-content:center;
+.section-title{
+font-size:32px;
 }
 
-header{
+.cards{
+grid-template-columns:1fr;
+}
+
+.community-links{
 flex-direction:column;
-gap:15px;
+align-items:center;
 }
+
+.community-links a{
+width:90%;
+text-align:center;
 }
+
+.brand-buttons{
+flex-direction:column;
+align-items:center;
+}
+
+.brand-buttons a{
+width:90%;
+text-align:center;
+}
+
+.cosmic-overlay h2{
+font-size:24px;
+}
+
+.cosmic-overlay p{
+font-size:15px;
+}
+
+}
+
 </style>
 </head>
+
 <body>
 
 <header>
-<div class="logo">⚡ AYMP COSMIC</div>
+
+<div class="logo">
+⚡ AYMP COSMIC
+</div>
 
 <nav>
 <a href="#home">Home</a>
@@ -395,6 +572,7 @@ gap:15px;
 <a href="#roadmap">Roadmap</a>
 <a href="#community">Community</a>
 </nav>
+
 </header>
 
 <section class="hero" id="home">
@@ -403,21 +581,12 @@ gap:15px;
 
 <h1>AYMP COSMIC ECOSYSTEM</h1>
 
-<p>
-Where Cosmic Energy Meets Web3 Technology ⚡
-<section class="hero" id="home">
-
-<img src="images/aymp-main.png" alt="AYMP">
-
-<h1>AYMP COSMIC ECOSYSTEM</h1>
-
-<!-- இங்கே paste செய்யவும் -->
-
 <section class="cosmic-banner">
 
 <img
 src="images/cosmic-yantra-banner.png"
 class="cosmic-banner-img"
+alt="AYMP Banner"
 >
 
 <div class="cosmic-overlay">
@@ -442,19 +611,26 @@ and futuristic Web3 ecosystem development.
 </p>
 
 <div class="hero-buttons">
-<a class="play-btn" href="http://t.me/aymponcosmictap_bot/aymp" target="_blank">
+
+<a class="play-btn"
+href="http://t.me/aymponcosmictap_bot/aymp"
+target="_blank">
 🎮 PLAY NOW
 </a>
 
 <a class="community-btn" href="#community">
 🌌 JOIN COMMUNITY
 </a>
+
 </div>
 
 </section>
 
 <section id="about">
-<h2 class="section-title">ABOUT AYMP</h2>
+
+<h2 class="section-title">
+ABOUT AYMP
+</h2>
 
 <div class="cards">
 
@@ -480,10 +656,14 @@ AYMP aims to expand into NFTs, staking, community rewards, cosmic missions, and 
 </div>
 
 </div>
+
 </section>
 
 <section id="token">
-<h2 class="section-title">AYMP TOKEN</h2>
+
+<h2 class="section-title">
+AYMP TOKEN
+</h2>
 
 <div class="token-box">
 
@@ -503,15 +683,21 @@ AYMP aims to expand into NFTs, staking, community rewards, cosmic missions, and 
 0xa67D6F0B48c0A6Dd6F73494367692785229B9118
 </div>
 
-<a class="buy-btn" href="https://pancakeswap.finance" target="_blank">
+<a class="buy-btn"
+href="https://pancakeswap.finance"
+target="_blank">
 🪙 BUY AYMP
 </a>
 
 </div>
+
 </section>
 
 <section id="yantras">
-<h2 class="section-title">SACRED YANTRAS</h2>
+
+<h2 class="section-title">
+SACRED YANTRAS
+</h2>
 
 <div class="cards">
 
@@ -544,15 +730,20 @@ Divine energy and future NFT-powered cosmic abilities.
 </div>
 
 </div>
+
 </section>
 
 <section id="roadmap">
-<h2 class="section-title">ROADMAP</h2>
+
+<h2 class="section-title">
+ROADMAP
+</h2>
 
 <div class="roadmap">
 
 <div class="phase">
 <h3>PHASE 1</h3>
+
 <ul>
 <li>Telegram Mini App Launch</li>
 <li>Cosmic Tap Game</li>
@@ -560,10 +751,12 @@ Divine energy and future NFT-powered cosmic abilities.
 <li>Firebase Online Players</li>
 <li>AYMP Branding</li>
 </ul>
+
 </div>
 
 <div class="phase">
 <h3>PHASE 2</h3>
+
 <ul>
 <li>Leaderboard System</li>
 <li>Referral Rewards</li>
@@ -571,10 +764,12 @@ Divine energy and future NFT-powered cosmic abilities.
 <li>AYMP Token Growth</li>
 <li>Social Campaigns</li>
 </ul>
+
 </div>
 
 <div class="phase">
 <h3>PHASE 3</h3>
+
 <ul>
 <li>NFT Yantras</li>
 <li>Staking System</li>
@@ -582,10 +777,12 @@ Divine energy and future NFT-powered cosmic abilities.
 <li>Cosmic Missions</li>
 <li>Marketplace</li>
 </ul>
+
 </div>
 
 <div class="phase">
 <h3>PHASE 4</h3>
+
 <ul>
 <li>DAO Governance</li>
 <li>AI + Astrology Features</li>
@@ -593,48 +790,60 @@ Divine energy and future NFT-powered cosmic abilities.
 <li>Advanced Web3 Gaming</li>
 <li>Multi-chain Expansion</li>
 </ul>
+
 </div>
 
 </div>
+
 </section>
 
 <section id="community">
-<h2 class="section-title">JOIN COMMUNITY</h2>
+
+<h2 class="section-title">
+JOIN COMMUNITY
+</h2>
 
 <div class="community-links">
 
-<a class="telegram" href="https://t.me/aymponweb3" target="_blank">
+<a class="telegram"
+href="https://t.me/aymponweb3"
+target="_blank">
 ✈ TELEGRAM
 </a>
 
-<a class="xlink" href="https://x.com/somus1963" target="_blank">
+<a class="xlink"
+href="https://x.com/somus1963"
+target="_blank">
 𝕏 X
 </a>
 
-<a class="discord" href="https://discord.gg/6Mh8tYPxV" target="_blank">
+<a class="discord"
+href="https://discord.gg/6Mh8tYPxV"
+target="_blank">
 💬 DISCORD
 </a>
 
-<a class="youtube" href="https://youtube.com/@imponsomu" target="_blank">
+<a class="youtube"
+href="https://youtube.com/@imponsomu"
+target="_blank">
 ▶ YOUTUBE
 </a>
 
 </div>
+
 </section>
-<!-- ========================= -->
-<!-- AYMP BRAND SECTION START -->
-<!-- Paste inside index.html -->
-<!-- Above footer section -->
-<!-- ========================= -->
 
 <section class="aymp-brand-section">
 
 <div class="brand-card">
 
 <img src="images/small-logo.png"
-class="brand-logo">
+class="brand-logo"
+alt="AYMP Logo">
 
-<h2>AYMP ECOSYSTEM</h2>
+<h2>
+AYMP ECOSYSTEM
+</h2>
 
 <p>
 Sacred Yantra × Web3 × Cosmic Energy
@@ -664,169 +873,15 @@ AYMP TOKEN
 
 </section>
 
-<style>
-
-/* ========================= */
-/* AYMP BRAND SECTION */
-/* ========================= */
-
-.aymp-brand-section{
-
-margin-top:50px;
-
-padding:20px;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-}
-
-.brand-card{
-
-width:100%;
-
-max-width:450px;
-
-background:
-rgba(255,255,255,0.05);
-
-border:
-1px solid rgba(255,215,0,0.2);
-
-border-radius:25px;
-
-padding:30px 20px;
-
-text-align:center;
-
-box-shadow:
-0 0 25px rgba(255,215,0,0.15);
-
-backdrop-filter:blur(8px);
-
-}
-
-.brand-logo{
-
-width:120px;
-
-height:120px;
-
-object-fit:cover;
-
-border-radius:50%;
-
-margin-bottom:20px;
-
-box-shadow:
-0 0 25px gold,
-0 0 40px #00ffff;
-
-animation:
-spinBrand 15s linear infinite;
-
-}
-
-.brand-card h2{
-
-font-size:28px;
-
-color:gold;
-
-margin-bottom:12px;
-
-text-shadow:
-0 0 15px gold;
-
-}
-
-.brand-card p{
-
-color:#00ffff;
-
-font-size:16px;
-
-line-height:1.7;
-
-margin-bottom:25px;
-
-}
-
-.brand-buttons{
-
-display:flex;
-
-flex-wrap:wrap;
-
-justify-content:center;
-
-gap:15px;
-
-}
-
-.brand-buttons a{
-
-padding:14px 20px;
-
-border-radius:14px;
-
-text-decoration:none;
-
-font-weight:bold;
-
-font-size:14px;
-
-background:
-linear-gradient(
-45deg,
-gold,
-orange
-);
-
-color:black;
-
-box-shadow:
-0 0 15px gold;
-
-transition:0.3s;
-
-}
-
-.brand-buttons a:hover{
-
-transform:scale(1.05);
-
-box-shadow:
-0 0 25px gold;
-
-}
-
-@keyframes spinBrand{
-
-0%{
-transform:rotate(0deg);
-}
-
-100%{
-transform:rotate(360deg);
-}
-
-}
-
-</style>
-
-<!-- ========================= -->
-<!-- AYMP BRAND SECTION END -->
-<!-- ========================= -->
 <footer>
+
 © 2026 AYMP COSMIC ECOSYSTEM ⚡
+
 <br><br>
+
 Powered By BNB Smart Chain & Telegram Mini Apps
+
 </footer>
 
 </body>
-</html>
-
+                     </html>

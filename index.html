@@ -1,1 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AYMP COSMIC ECOSYSTEM</title>
+<link rel="icon" type="image/png" href="images/favicon.png">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#000;
+color:white;
+overflow-x:hidden;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+header{
+position:fixed;
+top:0;
+width:100%;
+background:rgba(0,0,0,0.85);
+backdrop-filter:blur(10px);
+z-index:999;
+padding:15px 20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+border-bottom:1px solid rgba(255,215,0,0.2);
+}
+
+.logo{
+font-size:22px;
+font-weight:bold;
+color:gold;
+text-shadow:0 0 10px gold;
+}
+
+nav{
+display:flex;
+gap:12px;
+flex-wrap:wrap;
+justify-content:flex-end;
+}
+
+nav a{
+text-decoration:none;
+color:white;
+padding:10px 16px;
+border-radius:10px;
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,215,0,0.2);
+transition:0.3s;
+font-size:14px;
+}
+
+nav a:hover{
+background:gold;
+color:black;
+box-shadow:0 0 15px gold;
+}
+
+.hero{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:120px 20px 60px;
+background:
+radial-gradient(circle at center, rgba(0,150,255,0.2), transparent 60%),
+black;
+}
+
+.hero img{
+width:280px;
+max-width:90%;
+margin-bottom:30px;
+filter:drop-shadow(0 0 25px gold);
+animation:spin 18s linear infinite;
+}
+
+@keyframes spin{
+0%{transform:rotate(0deg);}
+100%{transform:rotate(360deg);}
+}
+
+.hero h1{
+font-size:55px;
+color:gold;
+text-shadow:0 0 25px gold;
+margin-bottom:20px;
+}
+
+.hero p{
+max-width:850px;
+font-size:20px;
+line-height:1.8;
+color:#ddd;
+margin-bottom:30px;
+}
+
+.hero-buttons{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.hero-buttons a{
+text-decoration:none;
+padding:16px 28px;
+border-radius:14px;
+font-weight:bold;
+font-size:16px;
+transition:0.3s;
+}
+
+.play-btn{
+background:linear-gradient(45deg,gold,orange);
+color:black;
+box-shadow:0 0 20px gold;
+}
+
+.community-btn{
+background:#00ffff;
+color:black;
+box-shadow:0 0 20px #00ffff;
+}
+
+section{
+padding:90px 20px;
+}
+
+.section-title{
+text-align:center;
+font-size:42px;
+margin-bottom:50px;
+color:gold;
+text-shadow:0 0 20px gold;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+max-width:1200px;
+margin:auto;
+}
+
+.card{
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,215,0,0.2);
+border-radius:20px;
+padding:30px;
+box-shadow:0 0 20px rgba(255,215,0,0.1);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 0 25px gold;
+}
+
+.card h3{
+margin-bottom:20px;
+color:#00ffff;
+font-size:24px;
+}
+
+.card p{
+line-height:1.8;
+color:#ddd;
+}
+
+.token-box{
+max-width:900px;
+margin:auto;
+background:rgba(255,255,255,0.05);
+padding:40px;
+border-radius:25px;
+border:1px solid rgba(0,255,255,0.2);
+box-shadow:0 0 30px rgba(0,255,255,0.15);
+}
+
+.token-box p{
+margin-bottom:18px;
+font-size:18px;
+line-height:1.8;
+}
+
+.contract{
+word-break:break-all;
+background:black;
+padding:15px;
+border-radius:12px;
+margin-top:10px;
+color:gold;
+}
+
+.buy-btn{
+display:inline-block;
+margin-top:25px;
+text-decoration:none;
+padding:15px 28px;
+background:linear-gradient(45deg,gold,orange);
+color:black;
+font-weight:bold;
+border-radius:12px;
+box-shadow:0 0 20px gold;
+}
+
+.roadmap{
+max-width:1000px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:25px;
+}
+
+.phase{
+background:rgba(255,255,255,0.05);
+padding:30px;
+border-left:5px solid gold;
+border-radius:16px;
+}
+
+.phase h3{
+margin-bottom:15px;
+color:#00ffff;
+}
+
+.phase ul{
+padding-left:20px;
+line-height:2;
+color:#ddd;
+}
+
+.community-links{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:20px;
+}
+
+.community-links a{
+text-decoration:none;
+padding:18px 30px;
+border-radius:14px;
+font-weight:bold;
+font-size:18px;
+}
+
+.telegram{
+background:#00aced;
+color:white;
+}
+
+.xlink{
+background:white;
+color:black;
+}
+
+.discord{
+background:#5865F2;
+color:white;
+}
+
+.youtube{
+background:red;
+color:white;
+}
+
+footer{
+text-align:center;
+padding:40px 20px;
+background:#050505;
+color:#999;
+font-size:14px;
+margin-top:50px;
+border-top:1px solid rgba(255,255,255,0.1);
+}
+
+@media(max-width:768px){
+.hero h1{
+font-size:38px;
+}
+
+.hero p{
+font-size:17px;
+}
+
+nav{
+justify-content:center;
+}
+
+header{
+flex-direction:column;
+gap:15px;
+}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="logo">⚡ AYMP COSMIC</div>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#token">AYMP Token</a>
+<a href="#yantras">Yantras</a>
+<a href="#roadmap">Roadmap</a>
+<a href="#community">Community</a>
+</nav>
+</header>
+
+<section class="hero" id="home">
+
+<img src="images/aymp-main.png" alt="AYMP">
+
+<h1>AYMP COSMIC ECOSYSTEM</h1>
+
+<p>
+Where Cosmic Energy Meets Web3 Technology ⚡
+
+AYMP combines Telegram Mini App gaming, Sacred Yantras,
+Cosmic Tap-To-Earn mechanics, AYMP Token utility,
+and futuristic Web3 ecosystem development.
+</p>
+
+<div class="hero-buttons">
+<a class="play-btn" href="http://t.me/aymponcosmictap_bot/aymp" target="_blank">
+🎮 PLAY NOW
+</a>
+
+<a class="community-btn" href="#community">
+🌌 JOIN COMMUNITY
+</a>
+</div>
+
+</section>
+
+<section id="about">
+<h2 class="section-title">ABOUT AYMP</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>⚡ Cosmic Tap Game</h3>
+<p>
+AYMP Cosmic Tap is a Telegram Mini App game where players tap cosmic energy and explore the AYMP ecosystem.
+</p>
+</div>
+
+<div class="card">
+<h3>🛕 Sacred Yantras</h3>
+<p>
+The ecosystem integrates spiritual yantra concepts including Lakshmi, Agni, Navagraha, and Shakti energies.
+</p>
+</div>
+
+<div class="card">
+<h3>🌐 Web3 Ecosystem</h3>
+<p>
+AYMP aims to expand into NFTs, staking, community rewards, cosmic missions, and blockchain experiences.
+</p>
+</div>
+
+</div>
+</section>
+
+<section id="token">
+<h2 class="section-title">AYMP TOKEN</h2>
+
+<div class="token-box">
+
+<p><strong>Token Name:</strong> AYMP TEST COIN</p>
+
+<p><strong>Symbol:</strong> AYMP</p>
+
+<p><strong>Chain:</strong> BNB Smart Chain</p>
+
+<p><strong>Suggested Total Supply:</strong> 144,000,000 AYMP</p>
+
+<p><strong>Trade:</strong> PancakeSwap</p>
+
+<p><strong>Contract Address:</strong></p>
+
+<div class="contract">
+0xa67D6F0B48c0A6Dd6F73494367692785229B9118
+</div>
+
+<a class="buy-btn" href="https://pancakeswap.finance" target="_blank">
+🪙 BUY AYMP
+</a>
+
+</div>
+</section>
+
+<section id="yantras">
+<h2 class="section-title">SACRED YANTRAS</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>💰 Lakshmi Yantra</h3>
+<p>
+Represents prosperity, abundance, and positive cosmic attraction.
+</p>
+</div>
+
+<div class="card">
+<h3>🔥 Agni Yantra</h3>
+<p>
+Symbolizes fire energy, transformation, strength, and activation.
+</p>
+</div>
+
+<div class="card">
+<h3>🪐 Navagraha Yantra</h3>
+<p>
+Planetary alignment and cosmic balance for the ecosystem.
+</p>
+</div>
+
+<div class="card">
+<h3>⚡ Shakti Yantra</h3>
+<p>
+Divine energy and future NFT-powered cosmic abilities.
+</p>
+</div>
+
+</div>
+</section>
+
+<section id="roadmap">
+<h2 class="section-title">ROADMAP</h2>
+
+<div class="roadmap">
+
+<div class="phase">
+<h3>PHASE 1</h3>
+<ul>
+<li>Telegram Mini App Launch</li>
+<li>Cosmic Tap Game</li>
+<li>Wallet Connect</li>
+<li>Firebase Online Players</li>
+<li>AYMP Branding</li>
+</ul>
+</div>
+
+<div class="phase">
+<h3>PHASE 2</h3>
+<ul>
+<li>Leaderboard System</li>
+<li>Referral Rewards</li>
+<li>Community Expansion</li>
+<li>AYMP Token Growth</li>
+<li>Social Campaigns</li>
+</ul>
+</div>
+
+<div class="phase">
+<h3>PHASE 3</h3>
+<ul>
+<li>NFT Yantras</li>
+<li>Staking System</li>
+<li>Reward Distribution</li>
+<li>Cosmic Missions</li>
+<li>Marketplace</li>
+</ul>
+</div>
+
+<div class="phase">
+<h3>PHASE 4</h3>
+<ul>
+<li>DAO Governance</li>
+<li>AI + Astrology Features</li>
+<li>Cosmic Metaverse</li>
+<li>Advanced Web3 Gaming</li>
+<li>Multi-chain Expansion</li>
+</ul>
+</div>
+
+</div>
+</section>
+
+<section id="community">
+<h2 class="section-title">JOIN COMMUNITY</h2>
+
+<div class="community-links">
+
+<a class="telegram" href="https://t.me/aymponweb3" target="_blank">
+✈ TELEGRAM
+</a>
+
+<a class="xlink" href="https://x.com/somus1963" target="_blank">
+𝕏 X
+</a>
+
+<a class="discord" href="https://discord.gg/6Mh8tYPxV" target="_blank">
+💬 DISCORD
+</a>
+
+<a class="youtube" href="https://youtube.com/@imponsomu" target="_blank">
+▶ YOUTUBE
+</a>
+
+</div>
+</section>
+
+<footer>
+© 2026 AYMP COSMIC ECOSYSTEM ⚡
+<br><br>
+Powered By BNB Smart Chain & Telegram Mini Apps
+</footer>
+
+</body>
+</html>
 

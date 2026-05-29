@@ -7,6 +7,77 @@
 <link rel="icon" type="image/png" href="images/favicon.png">
 
 <style>
+  /* ========================= */
+/* MOBILE WIDTH FIX */
+/* ========================= */
+
+body{
+overflow-x:hidden;
+width:100%;
+}
+
+section{
+width:100%;
+max-width:100%;
+overflow:hidden;
+}
+
+.cards{
+width:100%;
+max-width:100%;
+overflow:hidden;
+}
+
+.card{
+min-width:0;
+}
+
+img{
+max-width:100%;
+height:auto;
+display:block;
+}
+
+/* Prevent right-side overflow */
+*{
+max-width:100%;
+}
+
+/* MOBILE FIX */
+@media(max-width:768px){
+
+.hero{
+padding-left:15px;
+padding-right:15px;
+}
+
+.hero h1{
+font-size:32px;
+line-height:1.3;
+}
+
+.section-title{
+font-size:30px;
+text-align:center;
+}
+
+.token-box,
+.brand-card,
+.phase{
+width:100%;
+max-width:100%;
+}
+
+.community-links{
+padding:0 10px;
+}
+
+.brand-buttons a{
+width:100%;
+text-align:center;
+}
+
+}
 *{
 margin:0;
 padding:0;

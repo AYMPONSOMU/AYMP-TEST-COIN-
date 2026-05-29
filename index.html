@@ -111,7 +111,19 @@ margin-bottom:30px;
 filter:drop-shadow(0 0 25px gold);
 animation:spin 18s linear infinite;
 }
+/* FIX COSMIC BANNER IMAGE */
 
+.cosmic-banner-img{
+width:100%;
+max-width:900px;
+border-radius:20px;
+display:block;
+margin:auto;
+
+/* STOP ROTATION */
+animation:none !important;
+transform:none !important;
+}
 @keyframes spin{
 0%{
 transform:rotate(0deg);

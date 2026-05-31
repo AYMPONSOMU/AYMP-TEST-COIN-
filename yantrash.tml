@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>YANTRAS</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+<img src="images/aymp-emblem.png" class="logo-img">
+<span>AYMP COSMIC</span>
+</div>
+
+<nav>
+<a href="index.html">HOME</a>
+<a href="about.html">ABOUT</a>
+<a href="community.html">COMMUNITY</a>
+<a href="yantras.html">YANTRAS</a>
+<a href="aymptoken.html">AYMP TOKEN</a>
+<a href="roadmap.html">ROADMAP</a>
+<a href="play.html">PLAY GAME</a>
+</nav>
+
+</header>
+
+<section>
+
+<img src="images/aymp-emblem.png" class="page-logo">
+
+<h1>SACRED YANTRAS</h1>
+
+<div class="card">
+<h2>Lakshmi Yantra</h2>
+<p>Prosperity and abundance.</p>
+</div>
+
+<div class="card">
+<h2>Agni Yantra</h2>
+<p>Fire and transformation.</p>
+</div>
+
+<div class="card">
+<h2>Navagraha Yantra</h2>
+<p>Planetary harmony.</p>
+</div>
+
+<div class="card">
+<h2>Shakti Yantra</h2>
+<p>Divine energy and power.</p>
+</div>
+
+</section>
+
+<footer>
+
+© 2026 AYMP COSMIC ECOSYSTEM
+
+<br><br>
+
+Website:
+https://aymponsomu.github.io/AYMP-TEST-COIN-/
+
+</footer>
+
+</body>
+</html>

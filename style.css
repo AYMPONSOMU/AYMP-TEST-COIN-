@@ -1,0 +1,40 @@
+body{
+background:#000;
+color:white;
+font-family:Arial,sans-serif;
+}
+
+.logo-img{
+width:220px;
+display:block;
+margin:auto;
+filter:drop-shadow(0 0 20px gold);
+}
+
+header{
+background:#000;
+padding:20px;
+text-align:center;
+}
+
+nav a{
+color:gold;
+padding:10px;
+text-decoration:none;
+font-weight:bold;
+}
+
+.card{
+background:#111;
+border:1px solid gold;
+padding:20px;
+margin:20px;
+border-radius:15px;
+}
+
+footer{
+text-align:center;
+padding:30px;
+border-top:1px solid gold;
+margin-top:50px;
+  }
